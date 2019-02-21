@@ -30,30 +30,28 @@
      height: 200px;
      margin: auto;
      border: 2px solid #18bc9c;
+     border-radius: 10px;
  }
  
  .comment {
      width: 40%;
-     height: 200px;
+     min-height: 150px;
+     max-height: 300px;
      margin: auto;
      border: 2px solid #18bc9c;
      display: flex;
      flex-wrap: wrap;
+     border-radius: 10px;
  }
  
  [placeholder]:empty:before {
      content: attr(placeholder);
      color: #555;
  }
- /*
-[placeholder]:empty:focus::before {
-    content: "";
-}*/
  
  p[contenteditable=true] {
      border: none;
      border-bottom: 2px solid #18bc9c;
-     resize: none;
      width: 90%;
      height: auto;
      margin: auto;
@@ -88,13 +86,23 @@
      width: 90%;
      height: 50%;
      margin: auto;
-     border: 2px solid #18bc9c;
      align-items: flex-end;
      word-wrap: break-word;
      display: none;
  }
  
- .addTweet {
+ .comments-users div {
      word-wrap: break-word;
      display: block;
+     border-radius: 10px;
+     border: 2px solid #18bc9c;
+     margin-top: 5px;
+     margin-bottom: 10px;
+ }
+ 
+ .comments-users p {
+     margin-top: 5px;
+     margin-bottom: 5px;
+     padding-left: 10px;
+     font-size: 20px;
  }

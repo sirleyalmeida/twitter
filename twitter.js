@@ -1,10 +1,21 @@
 function tweet() {
     let msgTweet = document.querySelector("[contenteditable]").innerText.replace("\n", "<br>");
-    let tweetHour = hour();
-    let msgTweetOut = document.getElementById("tweetOut").innerHTML = msgTweet + " " + tweetHour;
+    document.querySelector("[contenteditable]").innerText = "";
+    return msgTweet
 }
-let btn = document.getElementById("tweetButton");
-btn.addEventListener("click", tweet);
+
+function tweet1() {
+    let newDiv = document.createElement("div");
+    let timeP = document.createElement("p");
+    timeP.innerHTML = hour();
+    let tweetUp = document.createElement("p");
+    tweetUp.innerHTML = tweet();
+    newDiv.appendChild(tweetUp)
+    newDiv.appendChild(timeP)
+    document.getElementById("tweetOut").appendChild(newDiv);
+}
+let btnT = document.getElementById("tweetButton");
+btnT.addEventListener("click", tweet1);
 
 function charactersCounter() {
     let msgTweet = document.querySelector("[contenteditable]").innerText;
@@ -26,7 +37,7 @@ function btnDisabled() {
     let msgTweet = document.querySelector("[contenteditable]").innerText;
     let charactersTypeds = msgTweet.length;
 
-    if (msgTweet === null && msgTweet === "") {
+    if (msgTweet === null || msgTweet === "") {
         document.getElementById("tweetButton").disabled = true;
     } else if (charactersTypeds > 140) {
         document.getElementById("tweetButton").disabled = true;
@@ -53,6 +64,5 @@ function postTweet() {
         x.style.display = "block";
     }
 }
-
 let btnDisplayPost = document.getElementById("tweetButton");
 btnDisplayPost.addEventListener("click", postTweet);
