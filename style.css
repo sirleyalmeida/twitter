@@ -1,6 +1,9 @@
  body {
      margin: 0px;
      font-family: 'Raleway', sans-serif;
+     background-image: url("surface-texture-wall-1902415.jpg");
+     background-size: 100%;
+     color: #4B0082;
  }
  
  nav {
@@ -9,6 +12,7 @@
      text-align: center;
      margin: auto;
      padding: 1vw;
+     font-weight: bold;
  }
  
  nav p {
@@ -33,6 +37,7 @@
      border: 2px solid #18bc9c;
      border-radius: 10px;
      text-align: center;
+     font-weight: bold;
  }
  
  .comment {
@@ -82,6 +87,7 @@
      color: #18bc9c;
      align-self: center;
      margin-left: 70%;
+     font-weight: bold;
  }
  
  .comments-users {
