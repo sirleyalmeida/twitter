@@ -1,79 +1,100 @@
-body {
-    margin: 0px;
-}
-
-nav {
-    background-color: #18bc9c;
-    color: white;
-    text-align: center;
-    margin: auto;
-    padding: 1vw;
-}
-
-nav p {
-    font-size: 25px;
-}
-
-main {
-    display: flex;
-    height: 300px;
-}
-
-.flex-main {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.data-users {
-    width: 40%;
-    height: 200px;
-    margin: auto;
-    border: 2px solid #18bc9c;
-}
-
-.comment {
-    width: 40%;
-    height: 200px;
-    margin: auto;
-    border: 2px solid #18bc9c;
-}
-
-textarea {
-    border: none;
-    border-bottom: 2px solid #18bc9c;
-    resize: none;
-    width: 90%;
-    margin: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 30px;
-    padding-left: 10px;
-}
-
-button {
-    background-color: #18bc9c;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.counter-twitter {
-    margin-top: 10px;
-    margin-left: 400px;
-    color: #18bc9c;
-}
-
-.comments-users {
-    width: 90%;
-    height: 50%;
-    margin: auto;
-    border: 2px solid #18bc9c;
-    align-items: flex-end;
-}
+ body {
+     margin: 0px;
+ }
+ 
+ nav {
+     background-color: #18bc9c;
+     color: white;
+     text-align: center;
+     margin: auto;
+     padding: 1vw;
+ }
+ 
+ nav p {
+     font-size: 25px;
+ }
+ 
+ main {
+     display: flex;
+     height: 300px;
+ }
+ 
+ .flex-main {
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+ }
+ 
+ .data-users {
+     width: 40%;
+     height: 200px;
+     margin: auto;
+     border: 2px solid #18bc9c;
+ }
+ 
+ .comment {
+     width: 40%;
+     height: 200px;
+     margin: auto;
+     border: 2px solid #18bc9c;
+     display: flex;
+     flex-wrap: wrap;
+ }
+ 
+ [placeholder]:empty:before {
+     content: attr(placeholder);
+     color: #555;
+ }
+ /*
+[placeholder]:empty:focus::before {
+    content: "";
+}*/
+ 
+ p[contenteditable=true] {
+     border: none;
+     border-bottom: 2px solid #18bc9c;
+     resize: none;
+     width: 90%;
+     height: auto;
+     margin: auto;
+     overflow: auto;
+     outline: none;
+ }
+ 
+ button {
+     background-color: #18bc9c;
+     border: none;
+     color: white;
+     padding: 10px 15px;
+     cursor: pointer;
+     text-decoration: none;
+     text-align: center;
+     border-radius: 5px;
+     align-self: center;
+     margin-left: 5%;
+ }
+ 
+ :disabled {
+     background-color: #A9A9A9;
+ }
+ 
+ p.counter-twitter {
+     color: #18bc9c;
+     align-self: center;
+     margin-left: 70%;
+ }
+ 
+ .comments-users {
+     width: 90%;
+     height: 50%;
+     margin: auto;
+     border: 2px solid #18bc9c;
+     align-items: flex-end;
+     word-wrap: break-word;
+     display: none;
+ }
+ 
+ .addTweet {
+     word-wrap: break-word;
+     display: block;
+ }

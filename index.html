@@ -13,17 +13,17 @@
         <p>Twitter</p>
     </nav>
     <main>
-        <div class="data-users">
+        <form class="data-users">
             <p>Dados do usuário</p>
-        </div>
+        </form>
         <div class="comment">
-            <textarea id="comments" onkeyup="charactersCounter()" placeholder="O que está acontecendo?"></textarea>
-            <button id="tweetButton">Tweet</button>
-            <span class="counter-twitter" id="counter">140</span>
+            <p id="comments" contenteditable="true" placeholder="O que está acontecendo?"></p>
+            <button id="tweetButton" type="submit" disabled>Tweet</button>
+            <p class="counter-twitter" id="counter">140</p>
         </div>
     </main>
-    <div class="comments-users">
-        <p id="tweetOut"></p>
+    <div id="postComments" class="comments-users" class="hidden">
+        <p class="addTweet" id="tweetOut"></p>
     </div>
 
     <script src="twitter.js"></script>
