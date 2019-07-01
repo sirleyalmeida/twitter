@@ -1,68 +1,66 @@
-function tweet() {
-    let msgTweet = document.querySelector("[contenteditable]").innerText.replace("\n", "<br>");
-    document.querySelector("[contenteditable]").innerText = "";
-    return msgTweet
-}
+function tweetPost() {
+	const msgTweet = document.querySelector("[contenteditable]").innerText.replace(/\n/g, "<br>");
 
-function tweet1() {
-    let newDiv = document.createElement("div");
-    let timeP = document.createElement("p");
-    timeP.innerHTML = hour();
-    let tweetUp = document.createElement("p");
-    tweetUp.innerHTML = tweet();
-    newDiv.appendChild(tweetUp)
-    newDiv.appendChild(timeP)
-    document.getElementById("tweetOut").appendChild(newDiv);
+	const newDiv = document.createElement("div");
+	const time = document.createElement("p");
+	time.setAttribute("class", "time");
+	time.innerHTML = new Date().toLocaleString();
+	const tweetUp = document.createElement("p");
+	tweetUp.setAttribute("class", "tweet");
+	tweetUp.innerHTML = msgTweet;
+	newDiv.appendChild(time);
+	newDiv.appendChild(tweetUp);
+	const tweetOut = document.getElementById("tweetOut");
+	tweetOut.insertBefore(newDiv, tweetOut.childNodes[0]);
+
+	document.querySelector("[contenteditable]").innerText = "";
+	btnDisabled();
+	charactersCounter();
 }
-let btnT = document.getElementById("tweetButton");
-btnT.addEventListener("click", tweet1);
+const btnT = document.getElementById("tweetButton");
+btnT.addEventListener("click", tweetPost);
 
 function charactersCounter() {
-    let msgTweet = document.querySelector("[contenteditable]").innerText;
-    let charactersTypeds = msgTweet.length;
-    let charactersLimit = 140;
-    let charactersRemaining = charactersLimit - charactersTypeds;
+	const counter = document.getElementById("counter");
+	const charTweet = document.querySelector("[contenteditable]").innerText;
+  const charactersTypeds = charTweet.length;
+  const charactersLimit = 140;
+	const charactersRemaining = charactersLimit - charactersTypeds;
 
-    if (charactersRemaining > 10 && charactersRemaining <= 20) {
-        document.getElementById("counter").style.color = "#800000";
-    } else if (charactersRemaining < 10) {
-        document.getElementById("counter").style.color = "#FF0000";
-    }
-    document.getElementById("counter").innerHTML = charactersRemaining;
+	if (charactersRemaining > 10 && charactersRemaining <= 20) {
+		counter.style.color = "#800000";
+	} else if (charactersRemaining < 10) {
+		counter.style.color = "#FF0000";
+	}
+	  counter.innerHTML = charactersRemaining;
 }
-let commentsTweet = document.getElementById("comments");
+const commentsTweet = document.getElementById("comments");
 commentsTweet.addEventListener("keyup", charactersCounter);
 
 function btnDisabled() {
-    let msgTweet = document.querySelector("[contenteditable]").innerText;
-    let charactersTypeds = msgTweet.length;
-
-    if (msgTweet === null || msgTweet === "") {
-        document.getElementById("tweetButton").disabled = true;
-    } else if (charactersTypeds > 140) {
-        document.getElementById("tweetButton").disabled = true;
-    } else {
-        document.getElementById("tweetButton").disabled = false;
-    }
+	const tweetButton = document.getElementById("tweetButton");
+	const charTweet = document.querySelector("[contenteditable]").innerText;
+	const charactersTypeds = charTweet.length;
+	
+	if (charTweet === null || charTweet === "") {
+		tweetButton.disabled = true;
+	} else if (charactersTypeds > 140) {
+		tweetButton.disabled = true;
+	} else {
+		tweetButton.disabled = false;
+	}
 }
-let btnDisabledEnabled = document.getElementById("comments");
+const btnDisabledEnabled = document.getElementById("comments");
 btnDisabledEnabled.addEventListener("keyup", btnDisabled);
 
-function hour() {
-    let data = new Date();
-    let hora = data.getHours();
-    let min = data.getUTCMinutes();
-    let str_hora = hora + ":" + min;
-    return str_hora;
-}
+function postedTweet() {
+	const postComments = document.getElementById("postComments");
 
-function postTweet() {
-    let x = document.getElementById("postComments");
-    if (x.style.display === "none") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+	if (postComments.style.display === "none") {
+		postComments.style.display = "none";
+	} else {
+		postComments.style.display = "block";
+	}
 }
-let btnDisplayPost = document.getElementById("tweetButton");
-btnDisplayPost.addEventListener("click", postTweet);
+const btnDisplayPost = document.getElementById("tweetButton");
+btnDisplayPost.addEventListener("click", postedTweet);

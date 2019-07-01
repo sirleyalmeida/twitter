@@ -1,116 +1,123 @@
  body {
-     margin: 0px;
-     font-family: 'Raleway', sans-serif;
-     background-image: url("surface-texture-wall-1902415.jpg");
-     background-size: 100%;
-     color: #4B0082;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+    background-image: url("../img/surface-texture-wall-1902415.jpg");
+    background-size: 100%;
+    color: #4B0082;
  }
  
  nav {
-     background-color: #18bc9c;
-     color: white;
-     text-align: center;
-     margin: auto;
-     padding: 1vw;
-     font-weight: bold;
+    background-color: #18bc9c;
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 1vw;
+    font-weight: bold;
  }
  
  nav p {
-     font-size: 25px;
+    font-size: 25px;
  }
  
  main {
-     display: flex;
-     height: 300px;
+    display: flex;
+    height: 250px;
  }
  
  .flex-main {
-     display: flex;
-     justify-content: space-around;
-     flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
  }
  
  .data-users {
-     width: 40%;
-     height: 200px;
-     margin: auto;
-     border: 2px solid #18bc9c;
-     border-radius: 10px;
-     text-align: center;
-     font-weight: bold;
+    width: 40%;
+    height: 160px;
+    margin: auto;
+    border: 2px solid #18bc9c;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
  }
  
  .comment {
-     width: 40%;
-     min-height: 150px;
-     max-height: 300px;
-     margin: auto;
-     border: 2px solid #18bc9c;
-     display: flex;
-     flex-wrap: wrap;
-     border-radius: 10px;
+    width: 40%;
+    min-height: 150px;
+    max-height: 300px;
+    margin: auto;
+    border: 2px solid #18bc9c;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
  }
  
  [placeholder]:empty:before {
-     content: attr(placeholder);
-     color: #555;
+    content: attr(placeholder);
+    color: #555;
  }
  
  p[contenteditable=true] {
-     border: none;
-     border-bottom: 2px solid #18bc9c;
-     width: 90%;
-     height: auto;
-     margin: auto;
-     overflow: auto;
-     outline: none;
+    border: none;
+    border-bottom: 2px solid #18bc9c;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    overflow: auto;
+    outline: none;
  }
  
  button {
-     background-color: #18bc9c;
-     border: none;
-     color: white;
-     padding: 10px 15px;
-     cursor: pointer;
-     text-decoration: none;
-     text-align: center;
-     border-radius: 5px;
-     align-self: center;
-     margin-left: 5%;
+    background-color: #18bc9c;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    align-self: center;
+    margin-left: 5%;
  }
  
  :disabled {
-     background-color: #A9A9A9;
+    background-color: #A9A9A9;
  }
  
  p.counter-twitter {
-     color: #18bc9c;
-     align-self: center;
-     margin-left: 70%;
-     font-weight: bold;
+    color: #18bc9c;
+    align-self: center;
+    margin-left: 70%;
+    font-weight: bold;
  }
  
- .comments-users {
-     width: 90%;
-     height: 50%;
-     margin: auto;
-     align-items: flex-end;
-     word-wrap: break-word;
-     display: none;
+ .comments-post {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    align-items: center;
+    word-wrap: break-word;
+		display: none;
+		
  }
  
- .comments-users div {
-     word-wrap: break-word;
-     display: block;
-     border-radius: 10px;
-     border: 2px solid #18bc9c;
-     margin-top: 5px;
-     margin-bottom: 10px;
+ .comments-post div {
+    word-wrap: break-word;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid #18bc9c;
+    margin-top: 5px;
+		margin-bottom: 10px;
+		padding: 5px;
  }
- 
- .comments-users p {
-     margin-top: 5px;
-     margin-bottom: 5px;
-     padding-left: 10px;
-     font-size: 20px;
+
+.tweet {
+    font-size: 20px;
+ }
+
+ .time {
+    font-size: 10px;
+ }
+
+.fa-twitter {
+	  font-size: 30px;
  }
